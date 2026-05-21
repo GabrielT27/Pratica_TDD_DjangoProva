@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Linkpedia - Meus Links</title>
+</head>
+<body>
+    <h1>Meus Links Cadastrados</h1>
+    
+    <ul>
+        {% for link in links %}
+            <li>
+                <strong>{{ link.titulo }}</strong> - <a href="{{ link.url }}">{{ link.url }}</a>
+            </li>
+        {% empty %}
+            <li>Nenhum link cadastrado ainda.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
