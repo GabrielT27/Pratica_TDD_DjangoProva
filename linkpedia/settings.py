@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9s+^k0ua$u08#_0&1v@dasgrdvawafd(g6shh-f(in3)p=)0m8'
+SECRET_KEY = 'django-insecure-zl+fdt9ayh7e%^-bop=lnm1-8dvt8^#r714^z+p@7av!g*oj5l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,10 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # App local
-    'core',
+    'linkpedia_app',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -77,7 +75,7 @@ WSGI_APPLICATION = 'linkpedia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'links.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -104,15 +102,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LOGIN_URL = '/login/'
-LOGOUT_URL = '/logout/'
+LANGUAGE_CODE = 'en-us'
 
-LANGUAGE_CODE = 'pt-br'
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = 'UTC'
+
 USE_I18N = True
-USE_L10N = True
-USE_TZ = True
 
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
